@@ -1,3 +1,4 @@
+import amplitude from 'amplitude-js';
 import React from 'react';
 import {
   AppBar,
@@ -14,17 +15,67 @@ import {
   Toolbar,
   Link,
 } from '@material-ui/core';
+import TabPanel from './components/TabPanel';
 
 import data from './data.json';
-import TabPanel from './components/TabPanel';
+type itemType = typeof data[0];
 
 function App() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
+  React.useEffect(() => {
+    amplitude.getInstance().init('d10ee4fd973714f7f25f0b201eb88e28');
+  }, []);
+
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
+
+  const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
+    event.preventDefault();
+
+    const url = event.currentTarget.href;
+    
+    amplitude
+      .getInstance()
+      .logEvent('link_clicked', { url, ...event.currentTarget.dataset });
+    
+    window.location.href = url;
+  };
+
+  function buildList(data: itemType[], filterCategory?: string) {
+    return (
+      <List>
+        {data
+          .filter(({ category }) => {
+            if (!filterCategory) return true;
+            return category === filterCategory;
+          })
+          .map((item, index) => [
+            <Link
+              href={item.homepage}
+              underline='none'
+              key={`item-${index}`}
+              data-category={item.category}
+              data-title={item.title}
+              onClick={handleClick}
+            >
+              <ListItem alignItems='flex-start'>
+                <ListItemAvatar>
+                  <Avatar alt={item.title} src={item.icon} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={item.title}
+                  secondary={item.description || item.subtitle}
+                />
+              </ListItem>
+            </Link>,
+            <Divider variant='inset' component='li' key={`divider-${index}`} />,
+          ])}
+      </List>
+    );
+  }
 
   return (
     <div className={classes.root}>
@@ -60,44 +111,6 @@ function App() {
       </TabPanel>
     </div>
   );
-}
-
-type itemType = typeof data[0];
-
-function buildList(data: itemType[], filterCategory?: string) {
-  return (
-    <List>
-      {data
-        .filter(({ category }) => {
-          if (!filterCategory) return true;
-          return category === filterCategory;
-        })
-        .map(buildListItem)}
-    </List>
-  );
-}
-
-function buildListItem(item: itemType, index: number) {
-  return [
-    <Link
-      href={item.homepage}
-      underline='none'
-      key={`item-${index}`}
-      data-category={item.category}
-      data-title={item.title}
-    >
-      <ListItem alignItems='flex-start'>
-        <ListItemAvatar>
-          <Avatar alt={item.title} src={item.icon} />
-        </ListItemAvatar>
-        <ListItemText
-          primary={item.title}
-          secondary={item.description || item.subtitle}
-        />
-      </ListItem>
-    </Link>,
-    <Divider variant='inset' component='li' key={`divider-${index}`} />,
-  ];
 }
 
 const useStyles = makeStyles((theme) => ({
