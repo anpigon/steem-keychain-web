@@ -77,9 +77,15 @@ function buildList(data: itemType[], filterCategory?: string) {
   );
 }
 
-function buildListItem(item: itemType) {
+function buildListItem(item: itemType, index: number) {
   return [
-    <Link href={item.homepage} underline='none'>
+    <Link
+      href={item.homepage}
+      underline='none'
+      key={`item-${index}`}
+      data-category={item.category}
+      data-title={item.title}
+    >
       <ListItem alignItems='flex-start'>
         <ListItemAvatar>
           <Avatar alt={item.title} src={item.icon} />
@@ -90,7 +96,7 @@ function buildListItem(item: itemType) {
         />
       </ListItem>
     </Link>,
-    <Divider variant='inset' component='li' />,
+    <Divider variant='inset' component='li' key={`divider-${index}`} />,
   ];
 }
 
