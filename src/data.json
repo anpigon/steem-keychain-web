@@ -1,5 +1,16 @@
 [
   {
+    "title": "Steemit",
+    "subtitle": "",
+    "description": "A blockchain-based blogging and social media website, which rewards its users with the cryptocurrency STEEM for publishing and curating content.",
+    "description_ko": "스팀잇(Steemit)은 블록체인 기반 블로그 및 소셜 미디어 서비스를 제공하는 웹사이트, 소셜 네트워크 서비스이다.",
+    "category": "social",
+    "order": 0,
+    "manager": "@steemit",
+    "homepage": "https://www.steemit.com",
+    "icon": "https://user-images.githubusercontent.com/57607783/125807221-8357c695-f4d1-4ec6-8f26-9bc844a9c7ea.png"
+  },
+  {
     "title": "SCT",
     "subtitle": "steemcoinpan token",
     "description": "SCT is the Steemcoinpan Community Utility token. Issued as author reward, curation reward, mining reward. The SCT token is used to write or curate the steemcoinpan.",
