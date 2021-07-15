@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/steem-keychain-web/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/steem-keychain-web/static/js/main.11a730aa.chunk.js",
-    "main.js.map": "/steem-keychain-web/static/js/main.11a730aa.chunk.js.map",
-    "runtime-main.js": "/steem-keychain-web/static/js/runtime-main.97a1ed91.js",
-    "runtime-main.js.map": "/steem-keychain-web/static/js/runtime-main.97a1ed91.js.map",
-    "static/js/2.72267867.chunk.js": "/steem-keychain-web/static/js/2.72267867.chunk.js",
-    "static/js/2.72267867.chunk.js.map": "/steem-keychain-web/static/js/2.72267867.chunk.js.map",
-    "static/js/3.69841daa.chunk.js": "/steem-keychain-web/static/js/3.69841daa.chunk.js",
-    "static/js/3.69841daa.chunk.js.map": "/steem-keychain-web/static/js/3.69841daa.chunk.js.map",
+    "main.js": "/steem-keychain-web/static/js/main.acd9220e.chunk.js",
+    "main.js.map": "/steem-keychain-web/static/js/main.acd9220e.chunk.js.map",
+    "runtime-main.js": "/steem-keychain-web/static/js/runtime-main.f8e526e3.js",
+    "runtime-main.js.map": "/steem-keychain-web/static/js/runtime-main.f8e526e3.js.map",
+    "static/js/2.af1c1721.chunk.js": "/steem-keychain-web/static/js/2.af1c1721.chunk.js",
+    "static/js/2.af1c1721.chunk.js.map": "/steem-keychain-web/static/js/2.af1c1721.chunk.js.map",
+    "static/js/3.35450a90.chunk.js": "/steem-keychain-web/static/js/3.35450a90.chunk.js",
+    "static/js/3.35450a90.chunk.js.map": "/steem-keychain-web/static/js/3.35450a90.chunk.js.map",
     "index.html": "/steem-keychain-web/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/steem-keychain-web/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.72267867.chunk.js.LICENSE.txt": "/steem-keychain-web/static/js/2.72267867.chunk.js.LICENSE.txt"
+    "static/js/2.af1c1721.chunk.js.LICENSE.txt": "/steem-keychain-web/static/js/2.af1c1721.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.97a1ed91.js",
-    "static/js/2.72267867.chunk.js",
+    "static/js/runtime-main.f8e526e3.js",
+    "static/js/2.af1c1721.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.11a730aa.chunk.js"
+    "static/js/main.acd9220e.chunk.js"
   ]
 }
