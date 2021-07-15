@@ -1,0 +1,73 @@
+[
+  {
+    "title": "SCT",
+    "subtitle": "steemcoinpan token",
+    "description": "SCT is the Steemcoinpan Community Utility token. Issued as author reward, curation reward, mining reward. The SCT token is used to write or curate the steemcoinpan.",
+    "description_ko": "SCT 는 steemcoinpan 커뮤니티 유틸리티 token 입니다. 저자 보상, 큐레이션 보상, 마이닝 보상으로 발행됩니다. SCT 토큰은 steemcoinpan 글을 쓰거나 큐레이션을 하기 위해 사용됩니다.",
+    "category": "social",
+    "order": 1,
+    "manager": "@sct",
+    "homepage": "https://www.steemcoinpan.com",
+    "icon": "https://files.steempeak.com/file/steempeak/stablewon/N3OED3Us-image.png"
+  },
+  {
+    "title": "ZZAN",
+    "subtitle": "Steemzzang Token",
+    "description": "",
+    "category": "social",
+    "order": 2,
+    "manager": "@zzan",
+    "homepage": "http://www.steemzzang.com/",
+    "icon": "https://cdn.steemitimages.com/DQmcMKwCBaUoE1SnJi1ZuugrFyGHaw1FdKZm5LunVnU1dNS/%EC%8A%A4%ED%8C%80%EC%A7%B1%EB%A1%9C%EA%B3%A0%EC%B9%BC%EB%9D%BC%20%EC%88%98%EC%A0%95.png"
+  },
+  {
+    "title": "AAA",
+    "subtitle": "TRIPLE A",
+    "description": "A community based review site for Movies and TV shows. Get not only the newest blockbusters but find deep insights about Movies that are in the moment not in the charts.",
+    "category": "social",
+    "order": 3,
+    "manager": "@triplea.reviews",
+    "homepage": "https://www.triplea.reviews/",
+    "icon": "https://cdn.steemitimages.com/DQmRUA4nEVgikokJ63CPw6ZgKLL48dvoUtYTvFvYnuMwBpt/image.png"
+  },
+  {
+    "title": "UPVU",
+    "subtitle": "UP Voting U",
+    "description": "",
+    "category": "tool",
+    "order": 4,
+    "manager": "@upvu",
+    "homepage": "http://upvu.org/",
+    "icon": "https://steemitimages.com/u/upvu/avatar"
+  },
+  {
+    "title": "SteemWorld",
+    "subtitle": "",
+    "description": "Steem Blockchain Tools",
+    "category": "tool",
+    "order": 5,
+    "manager": "@steemchiller",
+    "homepage": "https://steemworld.org/",
+    "icon": "https://steemworld.org/apple-touch-icon.png"
+  },
+  {
+    "title": "EpicDice",
+    "subtitle": "",
+    "description": "A gambling dApp on the Steem Blockchain",
+    "category": "game",
+    "order": 6,
+    "manager": "@epicdice",
+    "homepage": "https://epicdice.io/",
+    "icon": "https://steemitimages.com/u/epicdice/avatar"
+  },
+  {
+    "title": "DrugWars",
+    "subtitle": "",
+    "description": "A free to play rewarding simulation and strategy game over the Steem Blockchain.",
+    "category": "game",
+    "order": 7,
+    "manager": "@drugwars",
+    "homepage": "https://drugwars.io/",
+    "icon": "https://steemitimages.com/u/drugwars/avatar"
+  }
+]
