@@ -82,7 +82,7 @@ function App() {
       <AppBar position='sticky'>
         <Toolbar variant='dense'>
           <Typography variant='h6' className={classes.title}>
-            Dapp Station
+            Steem Dapp Station
           </Typography>
         </Toolbar>
         <Tabs
@@ -90,6 +90,7 @@ function App() {
           onChange={handleChange}
           centered
           variant='fullWidth'
+          indicatorColor="primary"
         >
           <Tab label='All' wrapped {...a11yProps(0)} />
           <Tab label='Social' wrapped {...a11yProps(1)} />
@@ -120,6 +121,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'center'
   },
   tabPanel: {
     padding: 0,
