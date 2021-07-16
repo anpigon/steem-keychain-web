@@ -5,14 +5,12 @@ import {
   Tabs,
   Tab,
   makeStyles,
-  Typography,
   List,
   ListItem,
   Avatar,
   ListItemAvatar,
   ListItemText,
   Divider,
-  Toolbar,
   Link,
 } from '@material-ui/core';
 import TabPanel from './components/TabPanel';
@@ -79,18 +77,19 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <AppBar position='sticky'>
-        <Toolbar variant='dense'>
-          <Typography variant='h6' className={classes.title}>
-            Steem Dapp Station
-          </Typography>
-        </Toolbar>
+      <AppBar
+        position='sticky'
+        classes={{
+          root: classes.appBar,
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
           centered
           variant='fullWidth'
-          indicatorColor="primary"
+          textColor='primary'
+          indicatorColor='primary'
         >
           <Tab label='All' wrapped {...a11yProps(0)} />
           <Tab label='Social' wrapped {...a11yProps(1)} />
@@ -118,6 +117,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
+  },
+  appBar: {
+    boxShadow: 'unset',
+    backgroundColor: theme.palette.background.paper,
+    borderBottomWidth: 1,
+    borderBottomStyle: 'solid',
+    borderBottomColor: `${theme.palette.primary.main}73`,
   },
   title: {
     flexGrow: 1,
