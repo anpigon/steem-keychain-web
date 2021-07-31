@@ -62,11 +62,21 @@
     "icon": "https://steemworld.org/apple-touch-icon.png"
   },
   {
+    "title": "Steem Engine",
+    "subtitle": "",
+    "description": "A platform that empowers communities, project owners, fundraisers, developers, and businesses to quickly and easily build on the Steem blockchain like never before",
+    "category": "tool",
+    "order": 6,
+    "manager": "@aggroed",
+    "homepage": "https://steem-engine.net/",
+    "icon": "https://s3.amazonaws.com/steem-engine/images/steem_engine_logo_32.png"
+  },
+  {
     "title": "EpicDice",
     "subtitle": "",
     "description": "A gambling dApp on the Steem Blockchain",
     "category": "game",
-    "order": 6,
+    "order": 7,
     "manager": "@epicdice",
     "homepage": "https://epicdice.io/",
     "icon": "https://steemitimages.com/u/epicdice/avatar"
@@ -76,7 +86,7 @@
     "subtitle": "",
     "description": "A free to play rewarding simulation and strategy game over the Steem Blockchain.",
     "category": "game",
-    "order": 7,
+    "order": 8,
     "manager": "@drugwars",
     "homepage": "https://drugwars.io/",
     "icon": "https://steemitimages.com/u/drugwars/avatar"
