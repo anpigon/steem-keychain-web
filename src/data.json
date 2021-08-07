@@ -160,5 +160,15 @@
     "owner": "@drugwars",
     "homepage": "https://drugwars.io/",
     "icon": "https://steemitimages.com/u/drugwars/avatar"
+  },
+  {
+    "title": "SCT 행운의 뽑기",
+    "subtitle": "",
+    "description": "행운의 SCT 뽑기에 도전해보세요.",
+    "category": "game",
+    "order": 83,
+    "owner": "@happyberrysboy",
+    "homepage": "https://apisct.cloud/manager",
+    "icon": "https://files.steempeak.com/file/steempeak/stablewon/N3OED3Us-image.png"
   }
 ]
