@@ -1,5 +1,5 @@
-import amplitude from 'amplitude-js';
-import React from 'react';
+import amplitude from "amplitude-js";
+import React from "react";
 import {
   AppBar,
   Tabs,
@@ -12,10 +12,12 @@ import {
   ListItemText,
   Divider,
   Link,
-} from '@material-ui/core';
-import TabPanel from './components/TabPanel';
+} from "@material-ui/core";
+import { isIOS, isMobileSafari } from "react-device-detect";
 
-import data from './data.json';
+import TabPanel from "./components/TabPanel";
+
+import data from "./data.json";
 type itemType = typeof data[0];
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
   const [value, setValue] = React.useState(0);
 
   React.useEffect(() => {
-    amplitude.getInstance().init('d10ee4fd973714f7f25f0b201eb88e28');
+    amplitude.getInstance().init("d10ee4fd973714f7f25f0b201eb88e28");
   }, []);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -34,11 +36,11 @@ function App() {
     event.preventDefault();
 
     const url = event.currentTarget.href;
-    
+
     amplitude
       .getInstance()
-      .logEvent('link_clicked', { url, ...event.currentTarget.dataset });
-    
+      .logEvent("link_clicked", { url, ...event.currentTarget.dataset });
+
     window.location.href = url;
   };
 
@@ -47,19 +49,20 @@ function App() {
       <List>
         {data
           .filter(({ category }) => {
+            if (category === "game" && (isIOS || isMobileSafari)) return false;
             if (!filterCategory) return true;
             return category === filterCategory;
           })
           .map((item, index) => [
             <Link
               href={item.homepage}
-              underline='none'
+              underline="none"
               key={`item-${index}`}
               data-category={item.category}
               data-title={item.title}
               onClick={handleClick}
             >
-              <ListItem alignItems='flex-start'>
+              <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                   <Avatar alt={item.title} src={item.icon} />
                 </ListItemAvatar>
@@ -69,7 +72,7 @@ function App() {
                 />
               </ListItem>
             </Link>,
-            <Divider variant='inset' component='li' key={`divider-${index}`} />,
+            <Divider variant="inset" component="li" key={`divider-${index}`} />,
           ])}
       </List>
     );
@@ -78,7 +81,7 @@ function App() {
   return (
     <div className={classes.root}>
       <AppBar
-        position='sticky'
+        position="sticky"
         classes={{
           root: classes.appBar,
         }}
@@ -87,27 +90,29 @@ function App() {
           value={value}
           onChange={handleChange}
           centered
-          variant='fullWidth'
-          textColor='primary'
-          indicatorColor='primary'
+          variant="fullWidth"
+          textColor="primary"
+          indicatorColor="primary"
         >
-          <Tab label='All' wrapped {...a11yProps(0)} />
-          <Tab label='Social' wrapped {...a11yProps(1)} />
-          <Tab label='Tool' wrapped {...a11yProps(2)} />
-          <Tab label='Game' wrapped {...a11yProps(3)} />
+          <Tab label="All" wrapped {...a11yProps(0)} />
+          <Tab label="Social" wrapped {...a11yProps(1)} />
+          <Tab label="Tool" wrapped {...a11yProps(2)} />
+          {!isIOS && !isMobileSafari && (
+            <Tab label="Game" wrapped {...a11yProps(3)} />
+          )}
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         {buildList(data)}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {buildList(data, 'social')}
+        {buildList(data, "social")}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {buildList(data, 'tool')}
+        {buildList(data, "tool")}
       </TabPanel>
       <TabPanel value={value} index={3}>
-        {buildList(data, 'game')}
+        {buildList(data, "game")}
       </TabPanel>
     </div>
   );
@@ -119,16 +124,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   appBar: {
-    boxShadow: 'unset',
+    boxShadow: "unset",
     backgroundColor: theme.palette.background.paper,
     borderBottomWidth: 1,
-    borderBottomStyle: 'solid',
+    borderBottomStyle: "solid",
     borderBottomColor: `${theme.palette.primary.main}73`,
   },
   title: {
     flexGrow: 1,
-    display: 'flex',
-    justifyContent: 'center'
+    display: "flex",
+    justifyContent: "center",
   },
   tabPanel: {
     padding: 0,
@@ -138,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
